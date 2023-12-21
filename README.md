@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Rostering System Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+### Purpose
+The purpose of this project is to create a digital rostering system for workplace scheduling. The current manual and somewhat inefficient process will be replaced with a streamlined digital solution to enhance efficiency, accuracy and overall management of work schedules.
 
-In the project directory, you can run:
+### Functionality / Features
+1. **User Registration and Login:**
+    - Users will be able to register and log in to the system, providing a personalized experience.
 
-### `npm start`
+2. **Shift Booking and Changes:**
+    - Users can view available shifts and book or change them based on their preferences.
+    - Shift changes can be coordinated with colleagues through the system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Leave Management:**
+    - Users can apply for leave digitally that specifies dates and reasons.
+    - The system will maintain a leave history which includes sick leave for each user for the current year.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Location-Based Clock In/Out (Future Addition):**
+    - Users may eventually have the ability to clock in and out at their current locations.
+    - Overtime can be automatically calculated based on clocked hours (to be implemented in the future).
 
-### `npm test`
+### Target Audience
+The target audience for this rostering system includes employees and managers within the workplace. It aims to provide a user-friendly platform for both scheduling managers and staff to streamline the rostering process.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack
+The proposed tech stack for this prototype includes:
+- Frontend: HTML, CSS, JavaScript, React
+- Backend: Node.js, Express
+- Database: MongoDB
+- Authentication: JWT
+- Additional Tools: Git for version control
 
-### `npm run build`
+This tech stack is chosen for its flexibility, scalability and compatibility with web development. It allows for a responsive and interactive user interface while providing a robust backend for data management.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Data Flow Diagram of the Website
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## User Management Process
+![User Management](docs/UserManagement.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User Registration Sub Process
+![User Registration Sub Process](docs/UserRegistration.PNG)
 
-### `npm run eject`
+## Shift Management Process
+![Shift Management Process](docs/ShiftManagement.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Shift Booking Sub Process
+![Shift Booking Sub Process](docs/ShiftBooking.PNG)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Shift Change Request Sub Process
+![Shift Change Request Sub Process](docs/ShiftChanging.PNG)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Application Architecture Diagram
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Application Architecture Diagram](docs/AAD.PNG)
 
-## Learn More
+# User Stories
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 1. User Registration and Login:
+- As a new employee I want to be able to register with the workplace rostering application using my email and password.
+- As a registered user I want to be able to log in securely and access the rostering system.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 2. Shift Booking and Changes:
+- As an employee I want to view available shifts and book them based on my preferences.
+- As an employee I want to request a shift change with a colleague and receive notifications based on the approval status.
+- As a manager I want to have the ability to approve or deny shift change requests to ensure proper coverage.
 
-### Code Splitting
+## 3. Leave Management:
+- As an employee I want to apply for leave by specifying the dates and reason.
+- As an employee I want to view my leave history, including sick leave for the current year.
+- As a manager I want to review and approve/deny leave requests to maintain adequate staffing levels.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 4. Location-Based Clock In/Out:
+- As an employee I want to clock in and out of my shifts at my current location using the application.
+- As an employee I want the system to automatically calculate my working hours including overtime if applicable.
 
-### Analyzing the Bundle Size
+## 5. Overtime Calculation:
+- As a manager I want the system to automatically calculate and track overtime hours for each employee.
+- As an employee I want to view my accumulated overtime hours in the system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 6. Notification Center:
+- As a user I want to receive notifications for approved leave, shift changes and other important updates in the rostering system.
 
-### Making a Progressive Web App
+## 7. User Profile Management:
+- As a user I want to update my profile information, including contact details and preferred communication methods.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 8. Calendar Integration:
+- As a user I want the ability to sync my rostering schedule with external calendars for better personal organization.
 
-### Advanced Configuration
+## 9. Reporting and Analytics:
+- As a manager I want access to reports and analytics on employee attendance, leave trends and overtime to support data-driven decision-making.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 10. Employee Preferences:
+- As an employee I want to set preferences for specific types of shifts or workdays to improve overall job satisfaction.
 
-### Deployment
+## 11. Security and Privacy:
+- As a user I want assurance that my personal and work-related data is secure and only accessible by authorized personnel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 12. Accessibility:
+- As a user I want the application to be accessible on various devices (desktop, mobile) to facilitate easy access and usability.
 
-### `npm run build` fails to minify
+# Wireframes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Website Front Page
+![Website Front Page](docs/WebMain.png)
+
+## Website Rostering & Calendar
+![Website Rostering & Calendar](docs/WebCalendar.png)
+
+## Phone Application Login
+![Phone Application Login](docs/AppLogin.png)
+
+## Phone Application Rostering & Calendar
+![Phone Application Rostering & Calendar](docs/AppCalendar.png)
+
+# Trello Screenshots
+
+## Beginning of Planning
+![Beginning of Planning](docs/TrelloStart.PNG)
+
+## Partial Completion of Planning
+![Partial Completion of Planning](docs/TrelloMiddle.PNG)
+
+## Finish of Planning
+![Finish of Planning](docs/TrelloFinished.PNGg)
