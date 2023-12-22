@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Register.css'; // CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './Register.css';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -7,11 +8,38 @@ function Register() {
     email: '',
     password: '',
   });
+  const navigate = useNavigate(); // Hook for navigation
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle the form submission to your backend
-    console.log(formData);
+
+    try {
+      const response = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json(); // Get the detailed response
+      if (response.ok) {
+        navigate('/');
+      } else {
+        console.error('Registration failed:', data.message);
+        alert(`Registration failed: ${data.message}`);
+      }
+
+      if (response.ok) {
+        // Assuming successful registration
+        // Redirect to the dashboard
+        navigate('/'); // Adjust the path as needed for your dashboard route
+      } else {
+        // Handle errors, for example, show an alert or set error messages in state
+        alert('Registration failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   const handleChange = (e) => {
@@ -22,6 +50,7 @@ function Register() {
     <div className="register">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
+        {/* ... your form fields ... */}
         <div className="form-group">
           <label>Name</label>
           <input 
