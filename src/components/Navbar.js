@@ -1,20 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; // Make sure to create a corresponding CSS file
+// ... other imports
 
-function Navbar() {
+function Navbar({ isLoggedIn }) {
   return (
     <nav className="navbar">
+      {/* Always visible content */}
       <div className="navbar-logo">Workplace Rostering</div>
-      <div className="navbar-links">
-        <Link to="/">Dashboard</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/shifts">Shift Management</Link>
-        <Link to="/leave">Leave Management</Link>
-        <Link to="/profile">Profile</Link>
-        {/* Add other links as needed */}
-      </div>
+
+      {/* Conditional content based on login status */}
+      {isLoggedIn && (
+        <div className="navbar-links">
+          <Link to="/">Dashboard</Link>
+          <Link to="/shifts">Shift Management</Link>
+          <Link to="/leave">Leave Management</Link>
+          <Link to="/profile">Profile</Link>
+          {/* Add other links as needed */}
+        </div>
+      )}
     </nav>
   );
 }

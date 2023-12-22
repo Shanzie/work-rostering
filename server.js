@@ -17,10 +17,11 @@ require('./config/passport')(passport);
 // DB Config
 const db = require('./config/keys').mongoURI;
 
-// Connect to MongoDB
-mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/workplacedatabase', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.error(err));
 
 // Use Routes
 require('./routes/users')(app);
