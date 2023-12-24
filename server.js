@@ -11,6 +11,8 @@ connectDB();
 const app = express();
 
 // CORS configuration
+app.use(cors());
+
 const corsOptions = {
   origin: 'https://workplacerostering.netlify.app', // Your Netlify URL
   optionsSuccessStatus: 200 // For legacy browser support
