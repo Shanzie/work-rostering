@@ -32,6 +32,8 @@ require('./config/passport')(passport);
 app.use('/api', registerRoutes);
 require('./routes/users')(app);
 require('./routes/shifts')(app);
+require('./routes/leave')(app);
+require('./routes/register')(app);
 
 // Global error handler
 app.use((err, req, res, next) => {
