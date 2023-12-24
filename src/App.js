@@ -9,6 +9,7 @@ import ShiftManagement from './components/ShiftManagement';
 import LeaveManagement from './components/LeaveManagement';
 import Profile from './components/Profile';
 import CalendarPage from './components/CalendarPage';
+import ContactUs from './components/ContactUs';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/contact" element={<ContactUs />} />
           {isLoggedIn && (
             <>
               <Route path="/shifts" element={<ShiftManagement />} />

@@ -1,5 +1,8 @@
 import React from 'react';
 import './Home.css'; // Make sure you have this CSS file
+import { Link } from 'react-router-dom';
+
+<Link to="/ContactUs">Contact Us</Link>
 
 function Home() {
   return (
@@ -37,6 +40,7 @@ function Home() {
         <button className="btn">Contact Us</button>
       </section>
     </div>
+    
   );
 }
 
