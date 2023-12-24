@@ -1,9 +1,15 @@
 require('dotenv').config();
 const express = require('express');
+const connectDB = require('./db');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
 const app = express();
+
+connectDB();
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Body Parser Middleware
 app.use(express.json());
