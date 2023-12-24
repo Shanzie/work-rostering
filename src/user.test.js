@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app'); // Adjust the path as needed
+const app = require('App');
 
 describe('User Endpoints', () => {
   it('should create a new user', async () => {

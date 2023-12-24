@@ -1,5 +1,6 @@
 const request = require('supertest');
-const app = require('../app');
+const app = require('./App');
+
 
 describe('Authentication Endpoints', () => {
   it('should login a user and return a token', async () => {
