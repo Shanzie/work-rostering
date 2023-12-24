@@ -12,6 +12,9 @@ import CalendarPage from './components/CalendarPage';
 import ContactUs from './components/ContactUs';
 import './App.css';
 
+const cors = require('cors');
+app.use(cors());
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
