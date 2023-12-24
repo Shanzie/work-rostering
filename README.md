@@ -1,5 +1,11 @@
 # Rostering System Prototype
 
+## Deployed Website
+https://workplacerostering.netlify.app/
+
+## Github Repo
+https://github.com/Shanzie/work-rostering
+
 ## Description
 
 ### Purpose
