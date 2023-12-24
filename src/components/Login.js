@@ -1,20 +1,41 @@
 import React, { useState } from 'react';
-import './Login.css'; // CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle the form submission to your backend
-    console.log(formData);
-  };
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Update the URL to your API's login endpoint
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Assuming the backend sends back a JWT token on successful login
+        const data = await response.json();
+        localStorage.setItem('token', data.token); // Store the token
+
+        navigate('/dashboard'); // Redirect to the dashboard
+      } else {
+        alert('Login failed. Please check your credentials.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (

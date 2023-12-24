@@ -18,7 +18,10 @@ router.post('/register', async (req, res) => {
         await user.save();
 
         const payload = { user: { id: user.id } };
-        jwt.sign(payload, 'your_jwt_secret', { expiresIn: 36000 },
+        
+// JWT found in .env
+
+        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 36000 },
             (err, token) => {
                 if (err) throw err;
                 res.json({ token });
@@ -34,4 +37,3 @@ router.post('/register', async (req, res) => {
 // ... Similar logic for login
 
 module.exports = router;
-

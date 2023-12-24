@@ -14,7 +14,7 @@ function Navbar({ isLoggedIn }) {
         {isLoggedIn ? (
           <>
             {/* Logged-in links */}
-            <Link to="/">Dashboard</Link>
+            <Link to="/dashboard">Dashboard</Link> {/* Updated Dashboard link */}
             <Link to="/shifts">Shift Management</Link>
             <Link to="/leave">Leave Management</Link>
             <Link to="/profile">Profile</Link>
