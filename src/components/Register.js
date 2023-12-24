@@ -31,9 +31,9 @@ function Register() {
       if (response.ok) {
         // Assuming successful registration
         // Redirect to the dashboard
-        navigate('/'); // Adjust the path as needed for your dashboard route
+        navigate('/');
       } else {
-        // Handle errors, for example, show an alert or set error messages in state
+        // Handle errors
         alert('Registration failed. Please try again.');
       }
     } catch (error) {
@@ -50,7 +50,7 @@ function Register() {
     <div className="register">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
-        {/* ... your form fields ... */}
+        {/* ... form fields ... */}
         <div className="form-group">
           <label>Name</label>
           <input 

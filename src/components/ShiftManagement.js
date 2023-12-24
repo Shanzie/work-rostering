@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShiftManagement.css'; // CSS file for styling
+import './ShiftManagement.css';
 
 function ShiftManagement() {
   return (

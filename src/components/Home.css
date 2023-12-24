@@ -1,5 +1,37 @@
 .home {
+    text-align: center;
+  }
+  
+  .hero {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+  }
+  
+  .services, .testimonials, .cta {
     padding: 20px;
-    background-color: #f3f3f3;
+  }
+  
+  .service-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .service-item {
+    max-width: 200px;
+  }
+  
+  .btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
   }
   
